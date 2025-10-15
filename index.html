@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Password Strength Checker</h1>
+        
+        <div class="input-group">
+            <div class="input-wrapper">
+                <input type="password" id="password" placeholder="Enter your password...">
+                <button type="button" class="toggle-password" onclick="togglePassword()">👁️</button>
+            </div>
+            
+            <div class="strength-meter">
+                <div class="strength-fill" id="strengthFill"></div>
+            </div>
+            
+            <div class="strength-text" id="strengthText">Enter a password to check its strength</div>
+        </div>
+
+        <div class="requirements">
+            <h3>Password Requirements</h3>
+            <div class="requirement-item" id="lengthReq">
+                <span class="requirement-icon">❌</span>
+                <span class="requirement-text">At least 8 characters long</span>
+            </div>
+            <div class="requirement-item" id="upperReq">
+                <span class="requirement-icon">❌</span>
+                <span class="requirement-text">Contains uppercase letter (A-Z)</span>
+            </div>
+            <div class="requirement-item" id="lowerReq">
+                <span class="requirement-icon">❌</span>
+                <span class="requirement-text">Contains lowercase letter (a-z)</span>
+            </div>
+            <div class="requirement-item" id="numberReq">
+                <span class="requirement-icon">❌</span>
+                <span class="requirement-text">Contains number (0-9)</span>
+            </div>
+            <div class="requirement-item" id="specialReq">
+                <span class="requirement-icon">❌</span>
+                <span class="requirement-text">Contains special character (!@#$%^&*)</span>
+            </div>
+            <div class="requirement-item" id="sequenceReq">
+                <span class="requirement-icon">❌</span>
+                <span class="requirement-text">No common sequences (123, abc, qwerty)</span>
+            </div>
+        </div>
+
+        <button class="generate-btn" onclick="generatePassword()">
+            Generate Strong Password
+        </button>
+
+        <div class="password-tips">
+            <h4>💡 Password Tips</h4>
+            <ul>
+                <li>Use a unique password for each account</li>
+                <li>Avoid personal information like birthdays or names</li>
+                <li>Consider using a passphrase with random words</li>
+                <li>Enable two-factor authentication when available</li>
+                <li>Use a password manager for better security</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="copy-feedback" id="copyFeedback">
+        Password copied to clipboard!
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
